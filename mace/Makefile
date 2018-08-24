@@ -1,10 +1,10 @@
-CXX = aarch64-himix100-linux-g++
-CC = aarch64-himix100-linux-gcc
-AR = aarch64-himix100-linux-ar cqs
+CXX = g++
+CC = gcc
+AR = ar cqs
 
 TOP_DIR = ..
 
-PLATFORM = GPU
+PLATFORM = CPU
 
 TARGET_LIB = libmace.a
 
@@ -215,7 +215,7 @@ OBJ_C := $(patsubst %.c, %.o, $(C_SOURCE))
 
 DEFINE_MACRO := 
 ifeq ($(PLATFORM),CPU)
-CPPFLAGS := -O3 -std=c++11 -fpermissive -DMACE_ENABLE_NEON -DMACE_ENABLE_OPENMP -fopenmp
+CPPFLAGS := -O3 -std=c++11 -fpermissive -DMACE_ENABLE_NEON -DMACE_ENABLE_OPENMP -fopenmp -mfloat-abi=hard -mfpu=neon
 endif
 
 ifeq ($(PLATFORM),GPU)

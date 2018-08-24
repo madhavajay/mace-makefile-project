@@ -1,6 +1,6 @@
-CXX = aarch64-himix100-linux-g++
-CC = aarch64-himix100-linux-gcc
-AR = aarch64-himix100-linux-ar cqs
+CXX = g++
+CC = gcc
+AR = ar cqs
 
 TOP_DIR = ..
 
